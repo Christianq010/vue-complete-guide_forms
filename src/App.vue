@@ -5,7 +5,7 @@
                 <h1 v-highlight:background.delayed="'red'">Directives</h1>
                 <h3 v-highlight="'red'">Random text</h3>
                 <p v-text="'Some text'"></p>
-                <h1 v-local-highlight:background.delayed="'red'">Local Directive</h1>
+                <h4 v-local-highlight:background.delayed.blink="'pink'">Local Directive</h4>
             </div>
         </div>
     </div>
@@ -21,13 +21,29 @@
                     if (binding.modifiers['delayed']) {
                     delay = 3000;
                     }
+                    if (binding.modifiers['blink']) {
+                        let mainColor = binding.value;
+                        let secondColor = 'violet';
+                        let currentColor = mainColor;
                     setTimeout(() => {
-                    if (binding.arg == 'background') {
-                        el.style.backgroundColor = binding.value;
-                    } else {
-                        el.style.color = binding.value;
-                    }
+                        setInterval( () => {
+                            currentColor == secondColor ? currentColor = mainColor : currentColor = secondColor;
+                            if (binding.arg == 'background') {
+                                el.style.backgroundColor = currentColor;
+                            } else {
+                                el.style.color = currentColor;
+                            }
+                        } , 1000);
                     }, delay);
+                    } else {
+                        setTimeout(() => {
+                        if (binding.arg == 'background') {
+                            el.style.backgroundColor = binding.value;
+                        } else {
+                            el.style.color = binding.value;
+                        }
+                        }, delay);
+                    }
                 }
             }
         }
