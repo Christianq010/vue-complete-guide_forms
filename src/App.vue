@@ -7,7 +7,9 @@
                 <button class="btn btn-primary" @click="show= !show">Some Button</button>
                 <br>
                 <br>
-                <div class="alert-success text-center" v-if="show">This is an Infowindow</div>
+                <transition name="fade">
+                    <div class="alert-success text-center" v-if="show">This is an Infowindow</div>
+                </transition>
             </div>
         </div>
     </div>
@@ -24,5 +26,18 @@
 </script>
 
 <style>
+    .fade-enter {
+        opacity: 0;
+    }
+    .fade-enter-active {
+        transition: opacity 1s;
+    }
+    .fade-leave {
+        /* opacity: 1; */
+    }
+    .fade-leave-active {
+        transition: opacity 1s;
+        opacity: 0;
+    }
 
 </style>
