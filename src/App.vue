@@ -17,6 +17,12 @@
                 <transition name="slide" type="animation">
                     <div class="alert-success text-center" v-if="show">This is an Infowindow</div>
                 </transition>
+                <transition
+                    enter-active-class="animated bounce"
+                    leave-active-class="animated shake"
+                >
+                    <div class="alert-danger text-center" v-if="show">This is an Infowindow</div>
+                </transition>
             </div>
         </div>
     </div>
