@@ -11,7 +11,7 @@
                     <div class="alert-success text-center" v-if="show">This is an Infowindow</div>
                 </transition>
                 <br>
-                <transition name="slide">
+                <transition name="slide" type="animation">
                     <div class="alert-success text-center" v-if="show">This is an Infowindow</div>
                 </transition>
             </div>
@@ -44,16 +44,20 @@
         opacity: 0;
     }
     .slide-enter {
+        opacity: 0;
         /* transform: translateY(20px) */
     }
     .slide-enter-active {
         animation: slide-in 1s ease-out forwards;
+        transition: opacity .5s;
     }
     .slide-leave {
         /* opacity: 1; */
     }
     .slide-leave-active {
         animation: slide-out 1s ease-out forwards;
+        transition: opacity 3s;
+        opacity: 0;
     }
 
     @keyframes slide-in {
