@@ -3,8 +3,11 @@
         <div class="row">
             <div class="col-xs-12 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                 <h1>Animations</h1>
+                 <transition name="slide" type="animation" appear>
+                    <h3 class="text-left" v-if="showHeading">Animates on default</h3>
+                </transition>
                 <hr>
-                <button class="btn btn-primary" @click="show= !show">Some Button</button>
+                <button class="btn btn-primary" @click="show= !show">Show / Close Info</button>
                 <br>
                 <br>
                 <transition name="fade">
@@ -23,7 +26,8 @@
     export default {
         data() {
             return {
-                show: false
+                show: false,
+                showHeading: true
             }
         }
     }
