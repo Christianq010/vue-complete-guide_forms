@@ -18,4 +18,5 @@ npm run build
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 #### Resources
-* Vuex - https://github.com/vuejs/vuex
+* Vuex Github Page: https://github.com/vuejs/vuex
+* Vuex Documenation: https://vuex.vuejs.org/en/
