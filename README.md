@@ -18,3 +18,5 @@ npm run build
 For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 For routing - [vue-router](https://github.com/vuejs/vue-router).
+
+* Routing with Props - https://github.com/vuejs/vue-router/tree/dev/examples/route-props
