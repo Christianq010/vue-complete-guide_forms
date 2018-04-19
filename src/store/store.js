@@ -4,12 +4,15 @@ import { STATUS_CODES } from 'http';
 
 Vue.use(Vuex);
 
-export const tore = new Vuex.Store({
+export const store = new Vuex.Store({
     state: {
         counter: 0
     },
     getters: {
         doubleCounter: state => {
+            return state.counter * 2;
+        },
+        stringCounter: state => {
             return state.counter * 2;
         }
     }
